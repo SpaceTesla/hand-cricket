@@ -3,7 +3,12 @@ from tkinter import *  # For GUI
 from random import choice  # For Computer to generate random numbers
 from openpyxl import load_workbook, Workbook  # For adding score to excel sheet
 from datetime import date, datetime  # To get date and time for the excel sheet
+import sys
+import os
 
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
 
 # Creating the window ----------
 root = Tk()
